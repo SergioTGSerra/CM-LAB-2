@@ -42,14 +42,14 @@ class AddFragment : Fragment() {
         val noteText = view?.findViewById<EditText>(R.id.addNote)?.text.toString()
 
         if(noteText.isEmpty()) {
-            Toast.makeText(view?.context, "Não pode uma nota vazia!", Toast.LENGTH_LONG).show()
+            Toast.makeText(view?.context, context?.getString(R.string.empty_note), Toast.LENGTH_LONG).show()
         }
         else {
             val note = Note(0, noteText)
 
             mNoteViewModel.addNote(note)
 
-            Toast.makeText(requireContext(), "Gravado com sucesso!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), context?.getString(R.string.recorded_successfully), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }
     }

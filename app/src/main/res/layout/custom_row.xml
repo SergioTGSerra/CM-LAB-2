@@ -18,6 +18,6 @@
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:padding="5dp"
-            android:text="Note"/>
+            android:text="@string/note"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

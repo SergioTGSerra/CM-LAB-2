@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">cm_lab_2</string>
+    <string name="empty_note">Não pode uma nota vazia!</string>
+    <string name="recorded_successfully">Gravado com sucesso!</string>
+    <string name="updated_successfully">Nota atualizada com sucesso!</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="sure_want_delete">Tem a certeza que pretende apagar a Nota?</string>
+    <string name="delete">Apagar</string>
+    <string name="note_deleted_successfully">Nota apagada com sucesso!</string>
+    <string name="note">Nota</string>
+    <string name="save">Salvar</string>
+    <string name="back">Voltar</string>
+</resources>
