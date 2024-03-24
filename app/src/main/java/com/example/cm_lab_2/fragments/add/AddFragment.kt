@@ -13,6 +13,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.cm_lab_2.R
 import com.example.cm_lab_2.data.entities.Note
 import com.example.cm_lab_2.data.vm.NoteViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class AddFragment : Fragment() {
     private lateinit var mNoteViewModel: NoteViewModel
@@ -46,7 +48,10 @@ class AddFragment : Fragment() {
             Toast.makeText(view?.context, context?.getString(R.string.empty_note), Toast.LENGTH_LONG).show()
         }
         else {
-            val note = Note(0, noteText, descriptionText)
+            val currentTimeMillis = System.currentTimeMillis()
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
+            val formattedDate = dateFormat.format(Date(currentTimeMillis))
+            val note = Note(0, noteText, descriptionText, formattedDate)
 
             mNoteViewModel.addNote(note)
 

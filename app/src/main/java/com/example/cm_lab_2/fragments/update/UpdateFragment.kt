@@ -17,6 +17,8 @@ import androidx.navigation.fragment.navArgs
 import com.example.cm_lab_2.R
 import com.example.cm_lab_2.data.entities.Note
 import com.example.cm_lab_2.data.vm.NoteViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class UpdateFragment : Fragment() {
     private  val args by navArgs<UpdateFragmentArgs>()
@@ -59,7 +61,10 @@ class UpdateFragment : Fragment() {
             makeText(context , context?.getString(R.string.empty_note), Toast.LENGTH_LONG).show()
         }
         else {
-            val note = Note(args.currentNote.id, noteText, descriptionText)
+            val currentTimeMillis = System.currentTimeMillis()
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
+            val formattedDate = dateFormat.format(Date(currentTimeMillis))
+            val note = Note(args.currentNote.id, noteText, descriptionText, formattedDate)
 
             mNoteViewModel.updateNote(note)
 
