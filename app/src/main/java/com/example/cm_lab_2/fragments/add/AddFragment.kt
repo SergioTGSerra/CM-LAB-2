@@ -40,12 +40,13 @@ class AddFragment : Fragment() {
 
     private fun addNote() {
         val noteText = view?.findViewById<EditText>(R.id.addNote)?.text.toString()
+        val descriptionText = view?.findViewById<EditText>(R.id.addDescription)?.text.toString()
 
         if(noteText.isEmpty()) {
             Toast.makeText(view?.context, context?.getString(R.string.empty_note), Toast.LENGTH_LONG).show()
         }
         else {
-            val note = Note(0, noteText)
+            val note = Note(0, noteText, descriptionText)
 
             mNoteViewModel.addNote(note)
 

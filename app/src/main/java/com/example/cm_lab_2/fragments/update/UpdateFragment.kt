@@ -31,6 +31,7 @@ class UpdateFragment : Fragment() {
         mNoteViewModel = ViewModelProvider(this)[NoteViewModel::class.java]
 
         view.findViewById<TextView>(R.id.updateNote).text = args.currentNote.note
+        view.findViewById<TextView>(R.id.updateDescription).text = args.currentNote.description
 
         val updateButton = view.findViewById<Button>(R.id.update)
         updateButton.setOnClickListener {
@@ -52,12 +53,13 @@ class UpdateFragment : Fragment() {
 
     private  fun updateNote(){
         val noteText = view?.findViewById<EditText>(R.id.updateNote)?.text.toString()
+        val descriptionText = view?.findViewById<EditText>(R.id.updateDescription)?.text.toString()
 
         if(noteText.isEmpty()) {
             makeText(context , context?.getString(R.string.empty_note), Toast.LENGTH_LONG).show()
         }
         else {
-            val note = Note(args.currentNote.id, noteText)
+            val note = Note(args.currentNote.id, noteText, descriptionText)
 
             mNoteViewModel.updateNote(note)
 

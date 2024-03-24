@@ -12,4 +12,5 @@
     <string name="note">Nota</string>
     <string name="save">Salvar</string>
     <string name="back">Voltar</string>
+    <string name="description">Description</string>
 </resources>
